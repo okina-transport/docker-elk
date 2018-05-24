@@ -58,6 +58,5 @@ services:
     restart: on-failure
 
 networks:
-
-  elk:
-    driver: bridge
+  naq:
+    external: true
