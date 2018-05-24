@@ -58,4 +58,5 @@ services:
     restart: on-failure
 
 networks:
-  naq:
+  elk:
+    external: true
