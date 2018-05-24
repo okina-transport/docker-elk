@@ -59,4 +59,3 @@ services:
 
 networks:
   naq:
-    external: true
