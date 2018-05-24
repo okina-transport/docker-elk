@@ -42,6 +42,20 @@ services:
     depends_on:
       - elasticsearch
 
+  logspout:
+    build:
+      context: extensions/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      ROUTE_URIS: logstash://logstash:5000
+      LOGSTASH_TAGS: docker-elk
+    networks:
+      - elk
+    depends_on:
+      - logstash
+    restart: on-failure
+
 networks:
 
   elk:
